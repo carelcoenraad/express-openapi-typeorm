@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "precommit": "pretty-quick --staged",
     "prettify": "prettier \"./**/*.{css,js,json,md,ts,yaml,yml}\" --write --ignore-path .gitignore",
     "start": "nodemon --watch \"src/**/*.ts\" --ext \"ts\" --exec \"ts-node ./src/index.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,5 +29,10 @@
     "pretty-quick": "^1.7.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
